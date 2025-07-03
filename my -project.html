@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Capitalize First Letter</title>
+</head>
+<body>
+<h1>Enter Text:</h1>
+<input type="text" id="textInput" Oninput="formatText()" placeholder="Type Here">
+<h2>Format:</h2>
+<input type="text" id="outputBox" disabled>
+<script>
+function formatText() {
+let input=document.getElementById("textInput").value;
+let formatted="";
+if (input.length>0){
+formatted=input.charAt(0).toUpperCase()+input.slice(1).toLowerCase();
+document.getElementById("outputBox").value =  formatted;
+} else {
+        document.getElementById("outputBox").value = "";
+      }
+    }
+</script>
+</body>
+</html>
+
