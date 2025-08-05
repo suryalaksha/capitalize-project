@@ -1,0 +1,141 @@
+<html>
+<head>
+<title>Signup form</title>
+<script src="https://kit.fontawesome.com/YOUR_KIT_CODE.js" crossorigin="anonymous"></script> 
+<style>
+body{
+display:flex;
+height:100vh;
+margin:0;
+padding:0;
+}
+.right{
+flex:1;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+background-color:white;
+gap:15px;
+padding:20px;
+}
+.Signup-btn {
+    background-color: dodgerblue;
+  color: white;
+  border: 5px solid #1e90ff;
+  font-weight: bold;
+  border-radius: 6px;
+  padding: 12px 34px;
+  font-size: 16px;
+  cursor: pointer;
+display: flex;
+justify-content:center;
+margin:10 10 10 50;
+}
+
+.Signup-btn:hover {
+    background:dodgerblue;
+}
+
+ * {
+      margin: 10px 10px 15px 10px;
+      padding: 5px;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+        }        
+.data input, .data signup {
+  width: 100%;
+  max-width: 350px;
+  padding: 10px 15px;
+  font-size: 16px;
+  box-sizing: border-box;
+
+display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px; 
+} 
+ 
+.image-container{
+width:100%;
+height:100vh;
+background-image:"blue.jpg";
+}
+
+.left {
+    flex: 1;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    margin:0;
+    background-color:white;
+   
+}
+.left img, .right img{
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+}
+.left {
+  outline: 1px solid white;
+}
+.right {
+  outline: 1px solid white;
+}
+</style>
+</head>
+<script>
+    function validateForm() {
+      
+      let email = document.getElementById("email").value.trim();
+      let password = document.getElementById("password").value.trim();
+      let error = document.getElementById("errorMessage");
+
+     const http = require('http');
+
+const server = http.createServer((req, res) => {
+  res.writeHead(200, { 'Content-Type': 'text/html' });
+  res.end('<h1>Hello from Node.js Server on Localhost!</h1>');
+});
+
+server.listen(3000, () => {
+  console.log('Server running at http://localhost:3000/');
+});
+s
+      if (!email.includes("@")) {
+        error.textContent = "Email must contain @!";
+        return false;
+      }
+
+      if (password.length < 6) {
+        error.textContent = "Password must be at least 6 characters!";
+        return false;
+      }
+
+      error.textContent = ""; // Clear error
+      alert("Signup successful!");
+      return true;
+    }
+  </script>
+<body>
+<div class="right">
+<h2><span style="color: blue;">Create Account</span></h2>
+ <p>or use your email for registration </p>
+ <form>
+<div class="data">
+ <label for="email"></label>
+  <input type="email" id="email" placeholder="example@email.com"><br>
+  <label for="password"></label>
+   <input type="password" id="password" required><br>
+</div>
+<button type="submit" class="Signup-btn">Sign Up</button>
+</form>
+</div>
+  <div class="left">
+<img src="blue.jpg" alt="background image" width="100%">
+       </div>
+</form>
+</body>
+<html>
+  "//"

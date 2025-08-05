@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<mat-card>
+<h2>Registration Form</h2>
+</head>
+<style>
+.full-width {
+ width: 100%;
+ margin-bottom: 15px;
+}
+
+mat-card {
+max-width: 400px;
+margin: 50px auto;
+padding: 20px;
+}
+</style>
+<form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+
+<mat-form-field appearance="fill" class="full-width">
+<mat-label>Name</mat-label>
+<input matInput formControlName="name" placeholder="Enter your name">
+</mat-form-field><br>
+
+ <mat-form-field appearance="fill" class="full-width">
+ <mat-label>Email</mat-label>
+  <input matInput formControlName="email" placeholder="Enter your email">
+  </mat-form-field><br>
+
+  <mat-form-field appearance="fill" class="full-width">
+  <mat-label>Password</mat-label>
+  <input matInput type="password" formControlName="password" placeholder="Enter password">
+  </mat-form-field><br>
+
+
+<mat-form-field appearance="fill" class="full-width">
+ <mat-label>Date of Birth</mat-label>
+ <input matInput [matDatepicker]="picker" formControlName="dob" placeholder="Select DOB">
+ <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+  <mat-datepicker #picker></mat-datepicker>
+ </mat-form-field><br>
+
+  <button mat-raised-button color="primary" type="submit" [disabled]="!registrationForm.valid">
+   Register
+  </button>
+
+ </form>
+</mat-card>
+<script>
+function validateForm() {
+    let isValid = true;
+    document.getElementById("nameError").innerText = "";
+    document.getElementById("emailError").innerText = "";
+    document.getElementById("passwordError").innerText = "";
+
+    
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const password = document.getElementById("password").value;
+
+    
+    if (name === "") {
+      document.getElementById("nameError").innerText = "Name is required.";
+      isValid = false;
+    }
+
+   
+    if (email === "") {
+      document.getElementById("emailError").innerText = "Email is required.";
+      isValid = false;
+    } else if (!email.includes("@")) {
+      document.getElementById("emailError").innerText = "Invalid email format.";
+      isValid = false;
+    }
+
+   
+    if (password === "") {
+      document.getElementById("passwordError").innerText = "Password is required.";
+      isValid = false;
+    } else if (password.length < 6) {
+      document.getElementById("passwordError").innerText = "Password must be at least 6 characters.";
+      isValid = false;
+    }
+
+ if (dateOfBirth === "") {
+      document.getElementById("dateOfBirthError").innerText = "dateOfBirth is required.";
+      isValid = false;
+    } else if (dateOfBirth.length < 8) {
+      document.getElementById("dateOfBirthError").innerText = "dateOfBirth must be at least 8 characters.";
+      isValid = false;
+    }
+
+    if (isValid) {
+      alert("Registration Successful!");
+    }
+
+    return false;
+  }
+</script>
+
+</html>
