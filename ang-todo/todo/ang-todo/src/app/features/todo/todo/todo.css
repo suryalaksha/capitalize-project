@@ -1,0 +1,93 @@
+body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f8ff;
+      display: flex;
+      justify-content: center;
+      padding-top: 60px;
+    }
+
+    .todo-box {
+      background-color:white;
+      padding: 25px;
+      border-radius: 10px;
+      width: 400px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    input[type="text"] {
+      width: 68%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    #addBtn {
+      padding: 10px 15px;
+      background-color:#28a745;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-left: 5px;
+    }
+
+    #addBtn:hover {
+      background-color: #218838;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin-top: 20px;
+    }
+
+    li {
+      background-color:white;
+      margin-bottom: 10px;
+      padding: 10px;
+      border-radius: 5px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 5px;
+    }
+
+    .edit-btn,
+    .delete-btn {
+      padding: 5px 10px;
+      font-size: 12px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .edit-btn {
+      background-color: blue;
+      color: white;
+    }
+
+    .edit-btn:hover {
+      background-color: blue;
+    }
+
+    .delete-btn {
+      background-color: blue;
+      color: white;
+    }
+
+    .delete-btn:hover {
+      background-color: blue;
+    }
+
+
+  
+      
